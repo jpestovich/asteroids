@@ -4,6 +4,8 @@ from player import *
 import pygame
 
 def main():
+    updatable = pygame.sprite.Group() 
+    drawable = pygame.sprite.Group()
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #set fps
@@ -20,6 +22,7 @@ def main():
                 return
         #set background here
         pygame.Surface.fill(screen, (0,0,0))
+        player.update(dt)
         player.draw(screen)
         pygame.display.update()
         dt = clock.tick(60) / 1000
@@ -28,4 +31,4 @@ def main():
     #print(f"Screen height: {SCREEN_HEIGHT}")
 
 if __name__ == "__main__":
-    main()
+    main()i

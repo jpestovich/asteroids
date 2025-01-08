@@ -2,6 +2,9 @@
 Project assignment from https://www.boot.dev/
 
 # To Do
-- [ ] Break asteroids
-- [ ] Split asteroids
+- [X] Break asteroids
+- [X] Split asteroids
 - [ ] Tidy Code
+- [ ] Add Game Over text to screen
+- [ ] Menu?
+- [ ] Difficulties

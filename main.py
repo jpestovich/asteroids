@@ -43,7 +43,7 @@ def main():
                 sys.exit()
             for shot in player.shots:
                 if(item.collision(shot)):
-                    item.kill()
+                    item.split()
                     shot.kill()
         # DRAWABLE player.draw(screen)
         for item in drawable:

@@ -1,3 +1,4 @@
+import sys
 from constants import *
 from circleshape import *
 from player import *
@@ -31,14 +32,16 @@ def main():
         # UPDATABLE player.update(dt)
         for item in updatable:
             item.update(dt)
+        for item in asteroids:
+            if(item.collision(player)):
+                print("Game Over!")
+                sys.exit()
+            
         # DRAWABLE player.draw(screen)
         for item in drawable:
             item.draw(screen)
         pygame.display.update()
         dt = clock.tick(60) / 1000
-    #print("Starting asteroids!")
-    #print(f"Screen width: {SCREEN_WIDTH}")
-    #print(f"Screen height: {SCREEN_HEIGHT}")
 
 if __name__ == "__main__":
     main()

@@ -37,8 +37,6 @@ def main():
             shot.draw(screen)
         for item in updatable:
             item.update(dt)
-        if player.timer > 0.0:
-            player.timer -= dt
         for item in asteroids:
             if(item.collision(player)):
                 print("Game Over!")

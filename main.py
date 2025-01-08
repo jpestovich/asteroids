@@ -7,6 +7,7 @@ def main():
     updatable = pygame.sprite.Group() 
     drawable = pygame.sprite.Group()
     pygame.init()
+    Player.containers = (updatable, drawable)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #set fps
     clock = pygame.time.Clock()
@@ -22,8 +23,12 @@ def main():
                 return
         #set background here
         pygame.Surface.fill(screen, (0,0,0))
-        player.update(dt)
-        player.draw(screen)
+        # UPDATABLE player.update(dt)
+        for item in updatable:
+            item.update(dt)
+        # DRAWABLE player.draw(screen)
+        for item in drawable:
+            item.draw(screen)
         pygame.display.update()
         dt = clock.tick(60) / 1000
     #print("Starting asteroids!")
@@ -31,4 +36,4 @@ def main():
     #print(f"Screen height: {SCREEN_HEIGHT}")
 
 if __name__ == "__main__":
-    main()i
+    main()
